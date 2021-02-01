@@ -1,0 +1,29 @@
+.Items {
+    
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    
+    li {
+        
+        &:not(:last-child) {
+            margin-right: 35px;
+        }
+        
+        a {
+            color: #99999F;
+            font-weight: 700;
+        }
+
+    }
+}
+
+.Active {
+    border: 3px solid;
+    border-radius: 50px;
+    padding: 4px 15px;
+
+
+    // color: linear-gradient(to left, #9b2def, #2d9bef, #35edfb);
+}

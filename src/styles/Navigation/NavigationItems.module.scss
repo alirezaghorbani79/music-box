@@ -8,22 +8,33 @@
     li {
         
         &:not(:last-child) {
-            margin-right: 35px;
+            margin-right: 5px;
         }
         
-        a {
+        a { 
+            background-clip: padding-box;
+            border-radius: 50px;
+            border: 3px solid transparent;
             color: #99999F;
-            font-weight: 700;
+            font-weight: 500;
+            padding: 2px 15px;
+            position: relative;
         }
 
     }
 }
 
 .Active {
-    border: 3px solid;
-    border-radius: 50px;
-    padding: 4px 15px;
+    background: black;
+    color: #2DCEEF !important;
 
-
-    // color: linear-gradient(to left, #9b2def, #2d9bef, #35edfb);
+    &::before {
+        background: linear-gradient(to left, #9b2def, #2d9bef, #35edfb);
+        border-radius: inherit; 
+        content: '';
+        margin: -3px; 
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        z-index: -1;
+    }
 }

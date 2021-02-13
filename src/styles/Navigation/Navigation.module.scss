@@ -1,8 +1,10 @@
 .Navigation {
-    display: flex;
-    background-color: #504646;
     align-items: center;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    background-color: transparent;
+    display: flex;
+    height: 84px;
     position: sticky;
     top: 0;
-    height: 84px;
 }

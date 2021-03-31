@@ -1,12 +1,11 @@
-import Navigation from '../../components/Navigation/Navigation'
-import Slider from '../../components/Sliders/Slider'
+import Layout from '../../components/Layout/Layout'
+import TopArtists from '../../components/Sliders/TopArtists'
 
 const Home = () => {
   return (
-    <>
-      <Navigation />
-      <Slider />
-    </>
+    <Layout>
+      <TopArtists />
+    </Layout>
   )
 }
 

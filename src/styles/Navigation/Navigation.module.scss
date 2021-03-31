@@ -1,10 +1,11 @@
 .Navigation {
     align-items: center;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     background-color: transparent;
     display: flex;
     height: 84px;
     position: sticky;
     top: 0;
+    z-index: 100;
 }

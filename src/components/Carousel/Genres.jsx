@@ -11,12 +11,12 @@ const Genres = () => {
 
   const item = imageList.map((el, index) => {
     const picture = el.default
-    return <Genre picture={picture} genreName={genreName[index]} />
+    return <Genre picture={picture} genreName={genreName[index]} key={index} />
   })
 
   return (
     <section className={styles.box}>
-      {item && <Slider title="Gernres">{item}</Slider>}
+      {item && <Slider title="Genres">{item}</Slider>}
     </section>
   )
 }

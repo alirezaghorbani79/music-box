@@ -1,0 +1,35 @@
+.cover {
+
+    img {
+        height: 200px;
+        border-radius: 10px;
+
+    }
+}
+.box {
+    color: white;
+    display: flex;
+    flex: 1;
+    margin: 50px 160px;
+
+    h3 {
+        margin-left: auto;
+        padding: 60px;
+        font-weight: 500;
+    }
+
+    
+}
+
+.info {
+    margin: 0px 40px;
+
+    h2 {
+        font-size: 40px;
+        margin: 0;
+    }
+
+    h4, h5{
+        font-weight: 500;
+    }
+}

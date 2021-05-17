@@ -1,0 +1,28 @@
+.box {
+    padding: 40px 160px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    table {
+        width: 100%;
+        margin-bottom: 30px;
+        th {
+            color: #99999F;
+            text-align: left;
+        }
+
+        tr {
+            height: 60px;
+            td {
+                cursor: pointer;
+            }
+
+            img {
+                height: 45px;
+                border-radius: 5px;
+            }
+        }
+    }
+}

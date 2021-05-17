@@ -1,13 +1,16 @@
-import Layout from '../../components/Layout/Layout'
 import TopArtists from '../../components/Carousel/TopArtists'
 import Genres from '../../components/Carousel/Genres'
+import TopTracks from '../../components/Carousel/TopTracks'
+import TopAlbums from '../../components/Carousel/TopAlbums'
 
 const Home = () => {
   return (
-    <Layout>
+    <>
       <Genres />
       <TopArtists />
-    </Layout>
+      <TopTracks />
+      <TopAlbums />
+    </>
   )
 }
 

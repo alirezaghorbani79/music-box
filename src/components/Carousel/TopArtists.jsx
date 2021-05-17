@@ -9,10 +9,15 @@ const TopArtists = () => {
   const { data: artists } = useTopArtists()
 
   const item = artists?.map((artist) => (
-    <Artist name={artist.name} id={artist.id} picture={artist.picture} />
+    <Artist
+      name={artist.name}
+      id={artist.id}
+      picture={artist.picture_medium}
+      key={artist.id}
+    />
   ))
 
-  if(!item) return null
+  if (!item) return null
 
   return (
     <section className={styles.box}>

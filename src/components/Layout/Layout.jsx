@@ -1,10 +1,14 @@
 import Navigation from '../Navigation/Navigation'
 
+import styles from '../../styles/Layout/Layout.module.scss'
+
 const Layout = ({ children }) => {
   return (
     <>
       <Navigation />
-      {children}
+      <main className={styles.main}>
+        {children}
+      </main>
     </>
   )
 }

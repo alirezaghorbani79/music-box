@@ -8,17 +8,17 @@
     li {
         
         &:not(:last-child) {
-            margin-right: 5px;
+            margin-right: .5rem;
         }
         
         a { 
             background-clip: padding-box;
-            border-radius: 50px;
+            border-radius: 5rem;
             border: 3px solid transparent;
             color: #99999F;
             font-weight: 500;
             line-height: 2;
-            padding: 2px 15px;
+            padding: .2rem 1.5rem;
             position: relative;
         }
 
@@ -33,7 +33,7 @@
         background: linear-gradient(to left, #9b2def, #2d9bef, #35edfb);
         border-radius: inherit; 
         content: '';
-        margin: -3px; 
+        margin: -0.3rem; 
         position: absolute;
         top: 0; right: 0; bottom: 0; left: 0;
         z-index: -1;

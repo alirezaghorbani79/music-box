@@ -1,21 +1,21 @@
 .album {
-    margin: 15px 10px;
-    width: 180px;
+    margin: 1.5rem 1rem;
+    width: 18rem;
     cursor: pointer;
 
     img {
-        height: 180px;
-        width: 180px;
-        border-radius: 10px;
+        height: 18rem;
+        width: 18rem;
+        border-radius: 1rem;
     }
 
     h5 {
         font-weight: 500;
-        margin: 8px 0;
+        margin: 0.8rem 0;
     }
 
     p {
-        font-size: 11px;
+        font-size: 1.1rem;
         font-weight: 400;
         margin: 0;
         color: #99999F;

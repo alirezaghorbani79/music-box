@@ -1,13 +1,14 @@
 .box {
-    padding: 40px 160px;
+    padding: 4rem 16rem;
     color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
 
     table {
+        // font-size: 1.2rem;
         width: 100%;
-        margin-bottom: 30px;
+        margin-bottom: 3rem;
         th {
             color: #99999F;
             text-align: left;
@@ -20,8 +21,8 @@
             }
 
             img {
-                height: 45px;
-                border-radius: 5px;
+                height: 4.5rem;
+                border-radius: 0.5rem;
             }
         }
     }

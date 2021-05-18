@@ -1,8 +1,8 @@
 .cover {
 
     img {
-        height: 200px;
-        border-radius: 10px;
+        height: 20rem;
+        border-radius: 1rem;
 
     }
 }
@@ -10,11 +10,11 @@
     color: white;
     display: flex;
     flex: 1;
-    margin: 50px 160px;
+    margin: 5rem 16rem;
 
     h3 {
         margin-left: auto;
-        padding: 60px;
+        padding: 6rem;
         font-weight: 500;
     }
 
@@ -22,14 +22,15 @@
 }
 
 .info {
-    margin: 0px 40px;
+    margin: 0px 4rem;
 
     h2 {
-        font-size: 40px;
+        font-size: 4rem;
         margin: 0;
     }
 
     h4, h5{
         font-weight: 500;
+        font-size: 1.5rem;
     }
 }

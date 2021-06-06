@@ -1,7 +1,7 @@
 import Geners from "../../components/GenersAndMoods/Geners"
 
 
-const Category = () => {
+const Categories = () => {
   return (
     <>
       <Geners />
@@ -9,4 +9,4 @@ const Category = () => {
   )
 }
 
-export default Category
+export default Categories

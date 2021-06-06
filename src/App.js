@@ -3,7 +3,7 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 
 import Home from './pages/Home/Home'
 import Layout from './components/Layout/Layout'
-import Categories from './pages/Category/Categories'
+import Categories from './pages/Categories/Categories'
 import Artist from './pages/Artist/Artist'
 import Album from './pages/Album/Album'
 

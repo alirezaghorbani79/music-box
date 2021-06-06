@@ -5,7 +5,7 @@ import styles from '../../styles/GenersAndMoods/Genre.module.scss'
 const Genre = ({ picture, genreName }) => {
 
   return (
-    <Link to={`/category/${genreName}`} >
+    <Link to={`/categories/${genreName}`} >
       <div className={styles.card} >
         <img className={styles.picture} src={picture} alt="Genre_pic" />
       </div>

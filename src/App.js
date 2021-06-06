@@ -3,7 +3,7 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 
 import Home from './pages/Home/Home'
 import Layout from './components/Layout/Layout'
-import Category from './pages/Category/Category'
+import Categories from './pages/Category/Categories'
 import Artist from './pages/Artist/Artist'
 import Album from './pages/Album/Album'
 
@@ -23,7 +23,7 @@ const App = () => {
         <Switch>
           <Layout>
             <Route path="/" exact component={Home} />
-            <Route path="/category" exact component={Category} />
+            <Route path="/categories" exact component={Categories} />
             <Route path="/artists/:id" component={Artist} />
             <Route path="/albums/:id" component={Album} />
           </Layout>

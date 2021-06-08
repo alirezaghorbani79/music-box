@@ -30,6 +30,10 @@ const useAlbum = (id) => {
     return useQuery(['album', id], () => api.getAlbum(id))
 }
 
+const useArtists = (genre) => {
+    return useQuery(['artists', genre], () => api.getArtists(genre))
+}
+
 export {
     useTopArtists,
     useTopTracks,
@@ -37,5 +41,6 @@ export {
     useArtistInfo,
     useArtistPlaylist,
     useArtistAlbums,
-    useAlbum
+    useAlbum,
+    useArtists
 }

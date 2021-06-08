@@ -59,6 +59,12 @@ const getAlbum = async (id) => {
     return { tracks, artist_id, artist_name, album_id, cover, release_date, tracks_number, album_title }
 }
 
+const getArtists = async (genre) => {
+    const { data } = await axios.get(`/genre/${genre}/artists`)
+
+    return data.data
+} 
+
 export {
     getTopArtists,
     getTopTracks,
@@ -66,5 +72,6 @@ export {
     getArtistInfo,
     getArtistPlaylist,
     getArtistAlbums,
-    getAlbum
+    getAlbum,
+    getArtists
 }

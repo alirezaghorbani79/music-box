@@ -61,6 +61,7 @@ const getAlbum = async (id) => {
 
 const getArtists = async (genre) => {
     const { data } = await axios.get(`/genre/${genre}/artists`)
+    console.log(genre)
 
     return data.data
 } 

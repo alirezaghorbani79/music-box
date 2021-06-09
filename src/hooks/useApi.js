@@ -1,6 +1,7 @@
 import { useQuery } from 'react-query'
 
 import * as api from '../utilities/api'
+import genres from '../data/genres'
 
 const useTopArtists = () => {
     return useQuery('top_artists', api.getTopArtists)
@@ -31,7 +32,8 @@ const useAlbum = (id) => {
 }
 
 const useArtists = (genre) => {
-    return useQuery(['artists', genre], () => api.getArtists(genre))
+    const id = genres[genre]
+    return useQuery(['artists', id], () => api.getArtists(id))
 }
 
 export {

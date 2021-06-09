@@ -1,4 +1,5 @@
 import { useParams } from 'react-router-dom'
+import Artists from '../../components/Artists/Artists'
 
 import { useArtists } from '../../hooks/useApi'
 
@@ -13,6 +14,7 @@ const Category = () => {
   return (
     <section className={styles.main}>
       <h1>{genre.toUpperCase()}</h1>
+      <Artists data={data} />
     </section>
   )
 }

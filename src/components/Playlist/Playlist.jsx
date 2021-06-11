@@ -30,6 +30,12 @@ const Playlist = ({ playlist }) => {
 
   const tableRow = toggle ? listItem : listItem.slice(0, 5)
 
+  const btn = listItem.length > 5 ? (
+    <Button type="outline" onClick={toggleHandler}>
+      Show more
+    </Button>
+  ) : null
+
   return (
     <section className={styles.box}>
       <table>
@@ -45,11 +51,7 @@ const Playlist = ({ playlist }) => {
         </thead>
         <tbody>{tableRow}</tbody>
       </table>
-      {!toggle && (
-        <Button type="outline" onClick={toggleHandler}>
-          Show more
-        </Button>
-      )}
+      {!toggle && btn}
     </section>
   )
 }

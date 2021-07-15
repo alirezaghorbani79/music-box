@@ -1,17 +1,20 @@
 .panel {
     display: flex;
     flex-direction: column;
+    flex: 1;
 }
 
 .box {
     display: flex;
     flex-direction: row;
+    width: 95%;
+    margin: 0 auto;
 }
 
 .buttons {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
 
     svg {
         margin: 1.6rem 4rem;
@@ -33,3 +36,29 @@
     height: 100%;
     width: 0%;
 }
+
+.volumePanel {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.volumeContainer {
+    width: 12rem;
+    margin-left: 1rem;
+    align-items: center;
+    background: #fff;
+    border-radius: .5rem;
+    cursor: pointer;
+    height: .35rem;
+}
+
+.volume {
+    background-color: #2DCEEF;
+    border-radius: .5rem;
+    height: 100%;
+    width: 100%;
+}
+

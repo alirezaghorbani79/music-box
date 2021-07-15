@@ -1,0 +1,14 @@
+.panel {
+    background-color: rgba(57, 57, 60, 0.9);
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    width: 98%;
+    height: 7rem;
+    position: fixed;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 1000;
+}

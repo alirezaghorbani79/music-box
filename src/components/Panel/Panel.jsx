@@ -13,6 +13,7 @@ const Panel = () => {
     const [isPlaying, setIsPlaying] = useState()
     const audioRef = useRef()
     const progressRef = useRef()
+    const volumeRef = useRef()
 
     const playHandler = () => {
         isPlaying ? audioRef.current.pause() : audioRef.current.play() 
@@ -30,15 +31,22 @@ const Panel = () => {
     const changeTimeHandler = (newTime) => {
         const duration = audioRef.current.duration
         const currentTime = duration * newTime
-
+        
         audioRef.current.currentTime = currentTime
     }
+
+    const changeVolumeHandler = (newVol) => {
+        const newWidth = newVol * 100 + '%'
+
+        volumeRef.current.style.width = newWidth
+        audioRef.current.volume = newVol
+    }
     
-    const playIcon = isPlaying ? Play : Pause
+    const playIcon = isPlaying ? Pause : Play
 
 
     const props = {
-        playHandler, progressRef, changeTimeHandler, playIcon
+        playHandler, progressRef, changeTimeHandler, playIcon, changeVolumeHandler, volumeRef
     }
 
     return (

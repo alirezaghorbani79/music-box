@@ -1,6 +1,7 @@
 import Navigation from '../Navigation/Navigation'
 
 import styles from '../../styles/Layout/Layout.module.scss'
+import Panel from '../Panel/Panel'
 
 const Layout = ({ children }) => {
   return (
@@ -9,6 +10,7 @@ const Layout = ({ children }) => {
       <main className={styles.main}>
         {children}
       </main>
+      <Panel /> 
     </>
   )
 }

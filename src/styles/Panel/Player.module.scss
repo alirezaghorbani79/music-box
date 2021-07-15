@@ -1,0 +1,35 @@
+.panel {
+    display: flex;
+    flex-direction: column;
+}
+
+.box {
+    display: flex;
+    flex-direction: row;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    svg {
+        margin: 1.6rem 4rem;
+        cursor: pointer;
+    }
+}
+
+.progressContainer {
+    background: #fff;
+    border-radius: .5rem;
+    cursor: pointer;
+    height: .35rem;
+    width: 100%;
+}
+
+.progressBar {
+    background-color: #2DCEEF;
+    border-radius: .5rem;
+    height: 100%;
+    width: 0%;
+}

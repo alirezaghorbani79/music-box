@@ -3,6 +3,13 @@
     flex-direction: row;
     color: white;
     flex: 1;
+    align-items: center;
+
+    img {
+        height: 5.5rem;
+        border-radius: 1rem;
+        margin-right: 1rem;
+    }
 }
 
 .info {

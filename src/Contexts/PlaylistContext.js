@@ -1,6 +1,5 @@
 import { createContext, useContext } from 'react'
 import { useImmerReducer } from 'use-immer'
-import n from './../assets/Masoud Sadeghloo - Shab Ahangi.mp3'
 
 
 const PlaylistStateContext = createContext()
@@ -8,7 +7,8 @@ const PlaylistDispatchContext = createContext()
 
 const initialState = {
     playlist: null,
-    song: n
+    song: null,
+    index: 0,
 }
 
 const playlistReducer = (state, action) => {
@@ -19,7 +19,28 @@ const playlistReducer = (state, action) => {
         case 'load': {
             state.playlist = payload.playlist
             state.song = state.playlist[0]
+            return
         }
+        case 'play': {
+            state.playlist = payload.playlist
+            state.index = payload.index
+            state.song = state.playlist[state.index]
+            return
+        }
+        case 'next': {
+            state.index = (state.index + 1) % state.playlist.length
+            state.song = state.playlist[state.index]
+            return
+        }
+        case 'previous': {
+            if (state.index === 0) state.index = state.playlist.length
+            state.index = (state.index - 1) % state.playlist.length
+            state.song = state.playlist[state.index]
+            return
+        }
+        default:
+            return state
+
     }
 }
 

@@ -9,8 +9,10 @@ const Album = () => {
   const { id } = useParams()
   const { data } = useAlbum(id)
 
-  if (!data) return null
 
+
+  if (!data) return null
+  
   const {
     tracks: playlist,
     artist_id,
@@ -20,6 +22,7 @@ const Album = () => {
     tracks_number,
     album_title,
   } = data
+  
 
   return (
     <section className={styles.container}>
@@ -33,7 +36,7 @@ const Album = () => {
         release_date={release_date}
         tracks_number={tracks_number}
       />
-      <Playlist playlist={playlist} />
+      <Playlist playlist={playlist} cover={cover} />
       <Albums id={artist_id} />
     </section>
   )

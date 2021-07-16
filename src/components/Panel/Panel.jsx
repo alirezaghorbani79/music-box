@@ -39,6 +39,10 @@ const Panel = () => {
   const previousHandler = () => {
     dispatch({ type: 'previous' })
   }
+  
+  const endHandler = () => {
+    dispatch({ type: 'end' })
+  }
 
   const updateTimeHandler = (event) => {
     const currentTime = event.target.currentTime
@@ -83,6 +87,7 @@ const Panel = () => {
         src={song.preview}
         id="audio"
         onTimeUpdate={updateTimeHandler}
+        onEnded={endHandler}
       />
 
       <DesktopPlayer {...props} />

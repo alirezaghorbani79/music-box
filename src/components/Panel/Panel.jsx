@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 import styles from '../../styles/Panel/Panel.module.scss'
 import DesktopPlayer from './DesktopPlayer'
@@ -6,10 +6,7 @@ import DesktopPlayer from './DesktopPlayer'
 import { ReactComponent as Play } from '../../assets/svg/play.svg'
 import { ReactComponent as Pause } from '../../assets/svg/pause.svg'
 
-import {
-  usePlaylistDispatch,
-  useSong,
-} from '../../Contexts/PlaylistContext'
+import { usePlaylistDispatch, useSong } from '../../Contexts/PlaylistContext'
 
 const Panel = () => {
   const [isPlaying, setIsPlaying] = useState(false)
@@ -18,8 +15,16 @@ const Panel = () => {
   const volumeRef = useRef()
 
   const dispatch = usePlaylistDispatch()
-
   const song = useSong()
+  useEffect(() => {
+    if (song && !isPlaying) {
+      audioRef.current.play()
+      setIsPlaying(!isPlaying)
+    } else if (song && isPlaying) {
+      audioRef.current.play()
+    }
+  }, [song])
+
   if (!song) return null
 
   const playHandler = () => {
@@ -30,7 +35,7 @@ const Panel = () => {
   const nextHandler = () => {
     dispatch({ type: 'next' })
   }
-  
+
   const previousHandler = () => {
     dispatch({ type: 'previous' })
   }
@@ -68,7 +73,7 @@ const Panel = () => {
     volumeRef,
     song,
     nextHandler,
-    previousHandler
+    previousHandler,
   }
 
   return (

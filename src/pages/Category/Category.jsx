@@ -9,7 +9,6 @@ const Category = () => {
   const { genre } = useParams()
   const { data } = useArtists(genre)
 
-  console.log(data, genre)
 
   return (
     <section className={styles.main}>

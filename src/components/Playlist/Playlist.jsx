@@ -1,10 +1,12 @@
 import { useState } from 'react'
+import { usePlaylistDispatch } from '../../Contexts/PlaylistContext'
 import styles from '../../styles/Playlist/Playlist.module.scss'
 import { secToMin } from '../../utilities/utilities'
 import Button from '../Button/Button'
 
 const Playlist = ({ playlist }) => {
   const [toggle, setToggle] = useState(false)
+  const dispatch = usePlaylistDispatch()
 
   const toggleHandler = () => {
     setToggle((prevState) => !prevState)
@@ -12,10 +14,19 @@ const Playlist = ({ playlist }) => {
 
   if (!playlist) return null
 
+  
+  const playSong = (index) => {
+    const payload = {
+      playlist,
+      index: index
+    }
+    dispatch({ type: 'play', payload})
+  }
+
 
   const listItem = playlist.map((song, index) => {
     return (
-      <tr key={song.id}>
+      <tr key={song.id} onClick={() => playSong(index)} >
         <td>{index + 1}</td>
         <td>
           <img src={song.cover} alt="" />

@@ -28,18 +28,18 @@ const Player = (props) => {
 
   return (
     <div className={styles.box}>
-      <InfoBox />
+      <InfoBox songInfo={props.song} />
       <div className={styles.panel}>
         <div className={styles.buttons}>
           <Icon src={Shuffle} size={18} fill="white" />
-          <Icon src={Previous} size={18} fill="white" />
+          <Icon src={Previous} size={18} fill="white" onClick={props.previousHandler} />
           <Icon
             src={props.playIcon}
             size={18}
             onClick={props.playHandler}
             fill="white"
           />
-          <Icon src={Next} size={18} fill="white" />
+          <Icon src={Next} size={18} fill="white" onClick={props.nextHandler} />
           <Icon src={Repeat} size={18} fill="white" />
         </div>
         <div

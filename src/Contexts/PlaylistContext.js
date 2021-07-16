@@ -38,6 +38,11 @@ const playlistReducer = (state, action) => {
             state.song = state.playlist[state.index]
             return
         }
+        case 'end': {
+            state.index = (state.index + 1) % state.playlist.length
+            state.song = state.playlist[state.index]
+            return
+        }
         default:
             return state
 

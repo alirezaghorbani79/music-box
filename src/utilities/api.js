@@ -52,16 +52,14 @@ const getAlbum = async (id) => {
         const { id, title, duration, preview } = track
         const { id: artist_id, name: artist_name } = track.artist
 
-        return { id, title, duration, preview, artist_id, artist_name, album_title }
+        return { id, title, duration, preview, artist_id, artist_name, album_title, cover }
     })
-    console.log(id, cover)
 
     return { tracks, artist_id, artist_name, album_id, cover, release_date, tracks_number, album_title }
 }
 
 const getArtists = async (genre) => {
     const { data } = await axios.get(`/genre/${genre}/artists`)
-    console.log(genre)
 
     return data.data
 } 

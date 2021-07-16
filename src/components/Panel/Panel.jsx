@@ -17,13 +17,11 @@ const Panel = () => {
   const dispatch = usePlaylistDispatch()
   const song = useSong()
   useEffect(() => {
-    if (song && !isPlaying) {
+    if (song) {
       audioRef.current.play()
       setIsPlaying((prevState) => !prevState)
-    } else if (song && isPlaying) {
-      audioRef.current.play()
     }
-  }, [song])
+  }, [])
 
   if (!song) return null
 

@@ -19,7 +19,7 @@ const Panel = () => {
   useEffect(() => {
     if (song && !isPlaying) {
       audioRef.current.play()
-      setIsPlaying(!isPlaying)
+      setIsPlaying((prevState) => !prevState)
     } else if (song && isPlaying) {
       audioRef.current.play()
     }

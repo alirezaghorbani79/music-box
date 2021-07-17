@@ -22,3 +22,14 @@
     font-weight: 200;
     margin: 0.3rem 0;
 }
+
+
+@media screen and (max-width: 768px) {
+    .picture {
+        height: 15rem;
+    }
+
+    .card {
+        width: 15rem;
+    }
+}

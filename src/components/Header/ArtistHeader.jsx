@@ -7,7 +7,6 @@ const ArtistHeader = ({ name, cover, nb_fan }) => {
         <img src={cover} alt={name} />
       </div>
       <div className={styles.info}>
-        <p>Artist</p>
         <h2>{name}</h2>
       </div>
         <h3>{`${nb_fan} Followers`}</h3>

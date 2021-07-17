@@ -14,3 +14,9 @@
 .card {
     cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+    .picture {
+        height: 15rem;
+    }
+}

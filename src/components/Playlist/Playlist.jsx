@@ -32,8 +32,8 @@ const Playlist = ({ playlist }) => {
           <img src={song.cover} alt="" />
         </td>
         <td>{song.title}</td>
-        <td>{song.artist_name}</td>
-        <td>{song.album_title}</td>
+        <td className={styles.moreInfo} >{song.artist_name}</td>
+        <td className={styles.moreInfo} >{song.album_title}</td>
         <td>{secToMin(song.duration)}</td>
       </tr>
     )
@@ -55,8 +55,8 @@ const Playlist = ({ playlist }) => {
             <th>#</th>
             <th></th>
             <th>TITLE</th>
-            <th>ARTIST</th>
-            <th>ALBUM</th>
+            <th className={styles.moreInfo} >ARTIST</th>
+            <th className={styles.moreInfo} >ALBUM</th>
             <th>TIME</th>
           </tr>
         </thead>

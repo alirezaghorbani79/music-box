@@ -15,4 +15,11 @@
     flex-wrap: wrap;
     justify-content: space-around;
     margin-bottom: 3rem;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .box {
+        padding: 0 5%;
+    }
 }

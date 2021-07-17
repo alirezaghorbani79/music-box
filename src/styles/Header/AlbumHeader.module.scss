@@ -34,3 +34,26 @@
         font-size: 1.5rem;
     }
 }
+
+@media (max-width: 768px) {
+    .box {
+        img {
+            margin-bottom: 2rem;
+        }
+
+        .date {
+            display: none;
+        }
+
+        .info {
+            h5 {
+                display: none;
+            }
+        }
+
+        margin: 5rem 3rem;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}

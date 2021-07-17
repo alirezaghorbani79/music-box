@@ -15,3 +15,13 @@
     cursor: pointer;
     margin: 2rem 1rem;
 }
+
+@media screen and (max-width: 768px) {
+    .picture {
+        height: 15rem;
+    }
+
+    .card {
+        margin: 2rem .5rem;
+    }
+}

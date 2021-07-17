@@ -21,3 +21,16 @@
         color: #99999F;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .album {
+        width: 14rem;
+        margin: 1.5rem 0rem;
+
+        img {
+            height: 14rem;
+            width: 14rem;
+            border-radius: 1rem;
+        }
+    }
+}

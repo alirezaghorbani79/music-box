@@ -1,0 +1,30 @@
+.navigation {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 7rem;
+    z-index: 100;
+    background-color: #3b3b3b;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 -.2rem 1rem black;
+
+    &:nth-child(1) {
+        border-right: 1px solid white;
+    }
+}
+
+.active {
+    svg {
+        fill: #2dceef;
+    }
+}
+
+@media (min-width: 768px) {
+    .navigation {
+        display: none;
+    }
+}

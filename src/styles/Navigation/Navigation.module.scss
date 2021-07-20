@@ -2,13 +2,19 @@
     align-items: center;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    background-color: transparent;
+    background-color: #3a3a3af6;
     display: flex;
     height: 8.4rem;
     position: fixed;
     top: 0;
     z-index: 100;
     width: 100%;
+
+    @supports (backdrop-filter: blur(20px)) or (-webkit-backdrop-filter: blur(20px)) {
+        background-color: transparent;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+    }
 }
 
 

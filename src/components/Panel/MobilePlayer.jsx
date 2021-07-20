@@ -11,6 +11,7 @@ import { ReactComponent as Shuffle } from '../../assets/svg/Shuffle.svg'
 import { ReactComponent as Next } from '../../assets/svg/next.svg'
 import { ReactComponent as Previous } from '../../assets/svg/previous.svg'
 import { ReactComponent as Repeat } from '../../assets/svg/Repeat.svg'
+import { ReactComponent as Close } from '../../assets/svg/Close.svg'
 
 const MobilePlayer = (props) => {
   const progressContainerRef = useRef()
@@ -31,9 +32,19 @@ const MobilePlayer = (props) => {
     }
   }, [open, history])
 
-  const modalHandler = (event) => {
+  const openHandler = (event) => {
     event.stopPropagation()
+    overflowHandler('hidden')
     setOpen((prevState) => !prevState)
+  }
+
+  const closeHandler = () => {
+    overflowHandler('visible')
+    setOpen((prevState) => !prevState)
+  }
+
+  const overflowHandler = overflow => {
+    document.body.style.overflow = overflow;
   }
 
   const press = (event, ref, callback) => {
@@ -50,6 +61,8 @@ const MobilePlayer = (props) => {
     <>
       <div className={`${styles.modal} ${open ? '' : styles.hidden}`}>
         <div className={styles.modalContainer}>
+          <Icon src={Close} size={18} fill="white" className={styles.close} onClick={closeHandler} />
+
           <img src={props.song.cover} alt="cover" />
           <h2>{props.song.title}</h2>
           <h3>{props.song.artist_name}</h3>
@@ -94,7 +107,7 @@ const MobilePlayer = (props) => {
 
       <div className={styles.container}>
         <div className={styles.box}>
-          <div onClick={modalHandler}>
+          <div onClick={openHandler}>
             <InfoBox songInfo={props.song} />
           </div>
           <div className={styles.buttons}>

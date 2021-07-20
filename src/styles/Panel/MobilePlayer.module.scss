@@ -85,7 +85,7 @@
 
 .panel {
     width: 80%;
-    margin: 15rem 0;
+    margin: 30% 0;
 }
 
 .modalButtons {
@@ -93,4 +93,10 @@
     flex-direction: row;
     justify-content: space-around;
     margin: 5rem 0;
+}
+
+.close {
+    padding: 4rem 4rem 0 0;
+    align-self: flex-end;
+    cursor: pointer;
 }

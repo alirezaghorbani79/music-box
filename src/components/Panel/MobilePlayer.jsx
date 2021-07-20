@@ -59,6 +59,8 @@ const MobilePlayer = (props) => {
               onMouseDown={(e) =>
                 press(e, progressContainerRef, props.changeTimeHandler)
               }
+              onTouchStart={(e) =>
+                press(e, progressContainerRef, props.changeTimeHandler)}
               ref={progressContainerRef}
             >
               <div className={styles.progressBar} ref={props.progressRef}></div>

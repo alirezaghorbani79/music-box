@@ -11,7 +11,6 @@ import { ReactComponent as Previous } from '../../assets/svg/previous.svg'
 import { ReactComponent as Repeat } from '../../assets/svg/Repeat.svg'
 import { ReactComponent as Volume } from '../../assets/svg/Volume.svg'
 
-
 const Player = (props) => {
   const progressContainerRef = useRef()
   const volumeContainerRef = useRef()
@@ -27,42 +26,54 @@ const Player = (props) => {
   }
 
   return (
-    <div className={styles.box}>
-      <InfoBox songInfo={props.song} />
-      <div className={styles.panel}>
-        <div className={styles.buttons}>
-          <Icon src={Shuffle} size={18} fill="white" />
-          <Icon src={Previous} size={18} fill="white" onClick={props.previousHandler} />
-          <Icon
-            src={props.playIcon}
-            size={18}
-            onClick={props.playHandler}
-            fill="white"
-          />
-          <Icon src={Next} size={18} fill="white" onClick={props.nextHandler} />
-          <Icon src={Repeat} size={18} fill="white" />
+    <div className={styles.container}>
+      <div className={styles.box}>
+        <InfoBox songInfo={props.song} />
+        <div className={styles.panel}>
+          <div className={styles.buttons}>
+            <Icon src={Shuffle} size={18} fill="white" />
+            <Icon
+              src={Previous}
+              size={18}
+              fill="white"
+              onClick={props.previousHandler}
+            />
+            <Icon
+              src={props.playIcon}
+              size={18}
+              onClick={props.playHandler}
+              fill="white"
+            />
+            <Icon
+              src={Next}
+              size={18}
+              fill="white"
+              onClick={props.nextHandler}
+            />
+            <Icon src={Repeat} size={18} fill="white" />
+          </div>
+          <div
+            className={styles.progressContainer}
+            onMouseDown={(e) =>
+              press(e, progressContainerRef, props.changeTimeHandler)
+            }
+            ref={progressContainerRef}
+          >
+            <div className={styles.progressBar} ref={props.progressRef}></div>
+          </div>
         </div>
-        <div
-          className={styles.progressContainer}
-          onMouseDown={(e) =>
-            press(e, progressContainerRef, props.changeTimeHandler)
-          }
-          ref={progressContainerRef}
-        >
-          <div className={styles.progressBar} ref={props.progressRef}></div>
-        </div>
-      </div>
-      <div className={styles.volumePanel}>
-        <Icon src={Volume} size={18} fill="white" />
+        <div className={styles.volumePanel}>
+          <Icon src={Volume} size={18} fill="white" />
 
-        <div
-          className={styles.volumeContainer}
-          ref={volumeContainerRef}
-          onMouseDown={(e) =>
-            press(e, volumeContainerRef, props.changeVolumeHandler)
-          }
-        >
-          <div className={styles.volume} ref={props.volumeRef}></div>
+          <div
+            className={styles.volumeContainer}
+            ref={volumeContainerRef}
+            onMouseDown={(e) =>
+              press(e, volumeContainerRef, props.changeVolumeHandler)
+            }
+          >
+            <div className={styles.volume} ref={props.volumeRef}></div>
+          </div>
         </div>
       </div>
     </div>

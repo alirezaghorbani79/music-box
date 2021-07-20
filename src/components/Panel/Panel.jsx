@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-import styles from '../../styles/Panel/Panel.module.scss'
 import DesktopPlayer from './DesktopPlayer'
+import MobilePlayer from './MobilePlayer'
+import { Desktop, Mobile } from '../Responsive/Responsive'
 
 import { ReactComponent as Play } from '../../assets/svg/play.svg'
 import { ReactComponent as Pause } from '../../assets/svg/pause.svg'
@@ -39,7 +40,7 @@ const Panel = () => {
   const previousHandler = () => {
     dispatch({ type: 'previous' })
   }
-  
+
   const endHandler = () => {
     dispatch({ type: 'end' })
   }
@@ -49,7 +50,12 @@ const Panel = () => {
     const duration = event.target.duration
     const progressWitdh = (currentTime / duration) * 100 + '%'
 
-    progressRef.current.style.width = progressWitdh
+    if (progressRef.current) {
+      console.log(progressRef)
+      progressRef.current.style.width = progressWitdh
+    }
+    
+
   }
 
   const changeTimeHandler = (newTime) => {
@@ -81,7 +87,7 @@ const Panel = () => {
   }
 
   return (
-    <div className={styles.panel}>
+    <>
       <audio
         ref={audioRef}
         src={song.preview}
@@ -90,8 +96,14 @@ const Panel = () => {
         onEnded={endHandler}
       />
 
-      <DesktopPlayer {...props} />
-    </div>
+      <Desktop>
+        <DesktopPlayer {...props} />
+      </Desktop>
+
+      <Mobile>
+        <MobilePlayer {...props} />
+      </Mobile>
+    </>
   )
 }
 

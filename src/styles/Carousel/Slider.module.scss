@@ -1,11 +1,26 @@
 .swiperContainer {
-    .swiperSlide {
-        width: auto;
-    }
+  .swiperSlide {
+    width: auto;
+  }
 }
 
 .header {
-    h2 {
-        color: white;
-    }
+  display: flex;
+  flex-direction: row;
+
+  svg {
+    margin: 0 1rem;
+    cursor: pointer;
+  }
+
+  h2 {
+    color: white;
+  }
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 2.5rem;
 }

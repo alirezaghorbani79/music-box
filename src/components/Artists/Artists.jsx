@@ -9,7 +9,7 @@ const Artists = ({ data }) => {
   const items = data.map((item) => {
     const { id, name, picture_medium: cover } = item
 
-    return <Artist id={id} name={name} picture={cover} />
+    return <Artist key={id} id={id} name={name} picture={cover} />
   })
 
   return <section className={styles.box}>{items}</section>

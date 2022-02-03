@@ -1,0 +1,18 @@
+.container {
+    margin: 3rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+        font-size: 20rem;
+        margin: 0;
+        color: white;
+    }
+
+    h2 {
+        font-size: 4rem;
+        margin: 0;
+        color: white;
+    }
+}

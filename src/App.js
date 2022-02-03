@@ -9,6 +9,7 @@ import Category from './pages/Category/Category'
 import PlaylistContextProvider from './Contexts/PlaylistContext'
 import NotFound from './pages/NotFound/NotFound'
 import LayoutRoute from './components/Layout/LayoutRoute'
+import About from './pages/About/About'
 
 const App = () => {
   const queryClient = new QueryClient({
@@ -30,6 +31,7 @@ const App = () => {
             <LayoutRoute path="/categories/:genre" component={Category} />
             <LayoutRoute path="/artists/:id" component={Artist} />
             <LayoutRoute path="/albums/:id" component={Album} />
+            <LayoutRoute path="/about" component={About} />
             <LayoutRoute component={NotFound} />
           </Switch>
         </Router>

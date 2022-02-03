@@ -7,12 +7,10 @@ import styles from '../../styles/Pages/Album.module.scss'
 
 const Album = () => {
   const { id } = useParams()
-  const { data } = useAlbum(id)
+  const { data, isLoading } = useAlbum(id)
 
+  if (isLoading) return null
 
-
-  if (!data) return null
-  
   const {
     tracks: playlist,
     artist_id,
@@ -22,7 +20,6 @@ const Album = () => {
     tracks_number,
     album_title,
   } = data
-  
 
   return (
     <section className={styles.container}>

@@ -9,10 +9,10 @@ import styles from '../../styles/Pages/Artist.module.scss'
 
 const Artist = () => {
   const { id } = useParams()
-  const { data: artist } = useArtistInfo(id)
+  const { data: artist, isLoading } = useArtistInfo(id)
   const { data: playlist } = useArtistPlaylist(id)
-  
-  if (!artist) return null
+
+  if (isLoading) return null
 
   return (
     <section className={styles.container}>
@@ -30,8 +30,6 @@ const Artist = () => {
 
       {playlist && <Playlist playlist={playlist} />}
       <Albums id={id} />
-
-
     </section>
   )
 }

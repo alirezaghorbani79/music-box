@@ -9,7 +9,6 @@ const Category = () => {
   const { genre } = useParams()
   const { data } = useArtists(genre)
 
-
   return (
     <section className={styles.main}>
       <h1>{genre.toUpperCase()}</h1>

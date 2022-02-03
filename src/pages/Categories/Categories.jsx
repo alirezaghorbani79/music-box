@@ -1,5 +1,4 @@
-import Geners from "../../components/GenersAndMoods/Geners"
-
+import Geners from '../../components/GenersAndMoods/Geners'
 
 const Categories = () => {
   return (

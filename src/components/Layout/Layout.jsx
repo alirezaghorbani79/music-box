@@ -8,10 +8,8 @@ const Layout = ({ children }) => {
   return (
     <>
       <Navigation />
-      <main className={styles.main}>
-        {children}
-      </main>
-      <Panel /> 
+      <main className={styles.main}>{children}</main>
+      <Panel />
       <MobileNavigation />
     </>
   )

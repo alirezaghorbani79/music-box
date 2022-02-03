@@ -5,7 +5,7 @@ import Button from '../Button/Button'
 import Album from './Album'
 
 const Albums = ({ id }) => {
-  const { data: albums } = useArtistAlbums(id)
+  const { data: albums, isLoading } = useArtistAlbums(id)
 
   const [toggle, setToggle] = useState(false)
 
@@ -13,13 +13,19 @@ const Albums = ({ id }) => {
     setToggle((prevState) => !prevState)
   }
 
-  if (!albums) return null
+  if (isLoading) return null
 
   const items = albums.map((album) => {
     const { id, title, release_date, cover_medium: cover } = album
 
     return (
-      <Album title={title} release_date={release_date} cover={cover} key={id} id= {id} />
+      <Album
+        title={title}
+        release_date={release_date}
+        cover={cover}
+        key={id}
+        id={id}
+      />
     )
   })
 

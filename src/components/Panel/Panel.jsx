@@ -54,8 +54,6 @@ const Panel = () => {
       console.log(progressRef)
       progressRef.current.style.width = progressWitdh
     }
-    
-
   }
 
   const changeTimeHandler = (newTime) => {

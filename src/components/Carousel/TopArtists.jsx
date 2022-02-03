@@ -6,7 +6,7 @@ import { useTopArtists } from '../../hooks/useApi'
 import Artist from './Artist'
 
 const TopArtists = () => {
-  const { data: artists } = useTopArtists()
+  const { data: artists, isLoading } = useTopArtists()
 
   const item = artists?.map((artist) => (
     <Artist
@@ -17,7 +17,7 @@ const TopArtists = () => {
     />
   ))
 
-  if (!item) return null
+  if (isLoading) return null
 
   return (
     <section className={styles.box}>

@@ -9,7 +9,7 @@ const ArtistHeader = ({ name, cover, nb_fan }) => {
       <div className={styles.info}>
         <h2>{name}</h2>
       </div>
-        <h3>{`${nb_fan} Followers`}</h3>
+      <h3>{`${nb_fan} Followers`}</h3>
     </section>
   )
 }

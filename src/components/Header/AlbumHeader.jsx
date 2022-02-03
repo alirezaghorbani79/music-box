@@ -1,8 +1,12 @@
 import styles from '../../styles/Header/AlbumHeader.module.scss'
 
-const AlbumHeader = ({ album_title, artist_name, release_date, cover, tracks_number}) => {
-
-
+const AlbumHeader = ({
+  album_title,
+  artist_name,
+  release_date,
+  cover,
+  tracks_number,
+}) => {
   return (
     <section className={styles.box}>
       <div className={styles.cover}>
@@ -13,7 +17,7 @@ const AlbumHeader = ({ album_title, artist_name, release_date, cover, tracks_num
         <h4>{artist_name}</h4>
         <h5>{`${tracks_number} Songs`}</h5>
       </div>
-      <h3 className={styles.date} >{`Release date: ${release_date}`}</h3>
+      <h3 className={styles.date}>{`Release date: ${release_date}`}</h3>
     </section>
   )
 }

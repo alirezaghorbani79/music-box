@@ -4,15 +4,12 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/swiper.scss'
 import styles from '../../styles/Carousel/Slider.module.scss'
 
-
 const Slider = ({ children, title }) => {
-
   const slides = Children.map(children, (child, index) => (
-    <SwiperSlide className={styles.swiperSlide} key={index} >
+    <SwiperSlide className={styles.swiperSlide} key={index}>
       {child}
     </SwiperSlide>
   ))
-
 
   return (
     <>
@@ -27,7 +24,6 @@ const Slider = ({ children, title }) => {
           initialSlide={0}
           centeredSlidesBounds
         >
-          
           {slides}
         </Swiper>
       </div>

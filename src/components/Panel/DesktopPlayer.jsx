@@ -58,7 +58,8 @@ const Player = (props) => {
               press(e, progressContainerRef, props.changeTimeHandler)
             }
             onTouchStart={(e) =>
-              press(e, progressContainerRef, props.changeTimeHandler)}
+              press(e, progressContainerRef, props.changeTimeHandler)
+            }
             ref={progressContainerRef}
           >
             <div className={styles.progressBar} ref={props.progressRef}></div>

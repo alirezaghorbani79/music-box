@@ -43,8 +43,8 @@ const MobilePlayer = (props) => {
     setOpen((prevState) => !prevState)
   }
 
-  const overflowHandler = overflow => {
-    document.body.style.overflow = overflow;
+  const overflowHandler = (overflow) => {
+    document.body.style.overflow = overflow
   }
 
   const press = (event, ref, callback) => {
@@ -61,7 +61,13 @@ const MobilePlayer = (props) => {
     <>
       <div className={`${styles.modal} ${open ? '' : styles.hidden}`}>
         <div className={styles.modalContainer}>
-          <Icon src={Close} size={18} fill="white" className={styles.close} onClick={closeHandler} />
+          <Icon
+            src={Close}
+            size={18}
+            fill="white"
+            className={styles.close}
+            onClick={closeHandler}
+          />
 
           <img src={props.song.cover} alt="cover" />
           <h2>{props.song.title}</h2>
@@ -73,7 +79,8 @@ const MobilePlayer = (props) => {
                 press(e, progressContainerRef, props.changeTimeHandler)
               }
               onTouchStart={(e) =>
-                press(e, progressContainerRef, props.changeTimeHandler)}
+                press(e, progressContainerRef, props.changeTimeHandler)
+              }
               ref={progressContainerRef}
             >
               <div className={styles.progressBar} ref={props.progressRef}></div>

@@ -6,8 +6,9 @@ import { useTopTracks } from '../../hooks/useApi'
 import Track from './Track'
 
 const TopTracks = () => {
-  const { data: tracks } = useTopTracks()
-  if (!tracks) return null
+  const { data: tracks, isLoading } = useTopTracks()
+
+  if (isLoading) return null
 
   const item = tracks.map((track) => {
     const { title: name, preview } = track

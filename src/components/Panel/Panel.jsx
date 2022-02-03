@@ -11,12 +11,13 @@ import { usePlaylistDispatch, useSong } from '../../Contexts/PlaylistContext'
 
 const Panel = () => {
   const [isPlaying, setIsPlaying] = useState(false)
+  const [isRepeat, setIsRepeat] = useState(false)
   const audioRef = useRef()
   const progressRef = useRef()
   const volumeRef = useRef()
 
   const dispatch = usePlaylistDispatch()
-  const song = useSong()
+  const { song, countOfPlayed } = useSong()
   useEffect(() => {
     if (song && !isPlaying) {
       audioRef.current.play()
@@ -24,7 +25,7 @@ const Panel = () => {
     } else if (song && isPlaying) {
       audioRef.current.play()
     }
-  }, [song])
+  }, [countOfPlayed, song])
 
   if (!song) return null
 
@@ -45,13 +46,17 @@ const Panel = () => {
     dispatch({ type: 'end' })
   }
 
+  const repeatHandler = () => {
+    dispatch({ type: 'repeat' })
+    setIsRepeat((prevState) => !prevState)
+  }
+
   const updateTimeHandler = (event) => {
     const currentTime = event.target.currentTime
     const duration = event.target.duration
     const progressWitdh = (currentTime / duration) * 100 + '%'
 
     if (progressRef.current) {
-      console.log(progressRef)
       progressRef.current.style.width = progressWitdh
     }
   }
@@ -82,6 +87,8 @@ const Panel = () => {
     song,
     nextHandler,
     previousHandler,
+    repeatHandler,
+    isRepeat,
   }
 
   return (

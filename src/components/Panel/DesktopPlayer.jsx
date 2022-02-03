@@ -50,7 +50,7 @@ const Player = (props) => {
               fill="white"
               onClick={props.nextHandler}
             />
-            <Icon src={Repeat} size={18} fill="white" />
+            <Icon src={Repeat} size={18} fill={props.isRepeat ? '#2dceef' : "white"} onClick={props.repeatHandler} />
           </div>
           <div
             className={styles.progressContainer}

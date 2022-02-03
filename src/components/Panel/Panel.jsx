@@ -12,6 +12,7 @@ import { usePlaylistDispatch, useSong } from '../../Contexts/PlaylistContext'
 const Panel = () => {
   const [isPlaying, setIsPlaying] = useState(false)
   const [isRepeat, setIsRepeat] = useState(false)
+  const [isShuffle, setIsShuffle] = useState(false)
   const audioRef = useRef()
   const progressRef = useRef()
   const volumeRef = useRef()
@@ -49,6 +50,11 @@ const Panel = () => {
   const repeatHandler = () => {
     dispatch({ type: 'repeat' })
     setIsRepeat((prevState) => !prevState)
+  }
+
+  const shuffleHandler = () => {
+    dispatch({ type: 'shuffle' })
+    setIsShuffle((prevState) => !prevState)
   }
 
   const updateTimeHandler = (event) => {
@@ -89,6 +95,8 @@ const Panel = () => {
     previousHandler,
     repeatHandler,
     isRepeat,
+    shuffleHandler,
+    isShuffle,
   }
 
   return (

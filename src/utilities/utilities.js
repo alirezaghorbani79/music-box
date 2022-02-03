@@ -7,4 +7,10 @@ const secToMin = (time) => {
   return `${minute}:${second}`
 }
 
-export { secToMin }
+const shuffle = (list) => {
+  const shuffledList = [...list]
+  shuffledList.sort(() => Math.random() - 0.5)
+  return shuffledList
+}
+
+export { secToMin, shuffle }

@@ -31,7 +31,12 @@ const Player = (props) => {
         <InfoBox songInfo={props.song} />
         <div className={styles.panel}>
           <div className={styles.buttons}>
-            <Icon src={Shuffle} size={18} fill="white" />
+            <Icon
+              src={Shuffle}
+              size={18}
+              fill={props.isShuffle ? '#2dceef' : 'white'}
+              onClick={props.shuffleHandler}
+            />
             <Icon
               src={Previous}
               size={18}
@@ -50,7 +55,12 @@ const Player = (props) => {
               fill="white"
               onClick={props.nextHandler}
             />
-            <Icon src={Repeat} size={18} fill={props.isRepeat ? '#2dceef' : "white"} onClick={props.repeatHandler} />
+            <Icon
+              src={Repeat}
+              size={18}
+              fill={props.isRepeat ? '#2dceef' : 'white'}
+              onClick={props.repeatHandler}
+            />
           </div>
           <div
             className={styles.progressContainer}

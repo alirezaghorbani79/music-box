@@ -1,11 +1,14 @@
 import { createContext, useContext } from 'react'
 import { useImmerReducer } from 'use-immer'
+import { shuffle } from '../utilities/utilities'
 
 const PlaylistStateContext = createContext()
 const PlaylistDispatchContext = createContext()
 
 const initialState = {
   playlist: null,
+  shuffledList: null,
+  originalList: null,
   song: null,
   index: 0,
   isRepeat: false,
@@ -18,9 +21,11 @@ const playlistReducer = (state, action) => {
 
   switch (type) {
     case 'play': {
-      state.playlist = payload.playlist
+      state.originalList = payload.playlist
+      state.shuffledList = shuffle(payload.playlist)
+      state.playlist = state.isShuffle ? state.shuffledList : state.originalList
       state.index = payload.index
-      state.song = state.playlist[state.index]
+      state.song = state.originalList[state.index]
       return
     }
     case 'next': {
@@ -44,6 +49,14 @@ const playlistReducer = (state, action) => {
     }
     case 'repeat': {
       state.isRepeat = !state.isRepeat
+      return
+    }
+    case 'shuffle': {
+      state.isShuffle = !state.isShuffle
+
+      if (state.isShuffle) state.playlist = state.shuffledList
+      else state.playlist = state.originalList
+
       return
     }
 

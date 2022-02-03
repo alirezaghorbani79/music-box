@@ -4,13 +4,12 @@ import Slider from './Slider'
 
 import { useTopTracks } from '../../hooks/useApi'
 import Track from './Track'
+import Loading from '../Loading/Loading'
 
 const TopTracks = () => {
   const { data: tracks, isLoading } = useTopTracks()
 
-  if (isLoading) return null
-
-  const item = tracks.map((track) => {
+  const item = tracks?.map((track) => {
     const { title: name, preview } = track
     const { name: artist_name } = track.artist
     const { cover_medium: cover, id } = track.album
@@ -27,10 +26,9 @@ const TopTracks = () => {
     )
   })
 
-  if (!item) return null
-
   return (
     <section className={styles.box}>
+      {isLoading && <Loading />}
       {item && <Slider title="Top tracks">{item}</Slider>}
     </section>
   )

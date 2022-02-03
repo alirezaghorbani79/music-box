@@ -1,6 +1,7 @@
 import { useParams } from 'react-router'
 import Albums from '../../components/Albums/Albums'
 import AlbumHeader from '../../components/Header/AlbumHeader'
+import Loading from '../../components/Loading/Loading'
 import Playlist from '../../components/Playlist/Playlist'
 import { useAlbum } from '../../hooks/useApi'
 import styles from '../../styles/Pages/Album.module.scss'
@@ -9,7 +10,7 @@ const Album = () => {
   const { id } = useParams()
   const { data, isLoading } = useAlbum(id)
 
-  if (isLoading) return null
+  if (isLoading) return <Loading />
 
   const {
     tracks: playlist,

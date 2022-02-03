@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom'
 import Albums from '../../components/Albums/Albums'
 import ArtistHeader from '../../components/Header/ArtistHeader'
+import Loading from '../../components/Loading/Loading'
 import Playlist from '../../components/Playlist/Playlist'
 
 import { useArtistInfo, useArtistPlaylist } from '../../hooks/useApi'
@@ -12,7 +13,7 @@ const Artist = () => {
   const { data: artist, isLoading } = useArtistInfo(id)
   const { data: playlist } = useArtistPlaylist(id)
 
-  if (isLoading) return null
+  if (isLoading) return <Loading />
 
   return (
     <section className={styles.container}>

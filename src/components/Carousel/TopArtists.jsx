@@ -4,6 +4,7 @@ import Slider from './Slider'
 
 import { useTopArtists } from '../../hooks/useApi'
 import Artist from './Artist'
+import Loading from '../Loading/Loading'
 
 const TopArtists = () => {
   const { data: artists, isLoading } = useTopArtists()
@@ -17,10 +18,9 @@ const TopArtists = () => {
     />
   ))
 
-  if (isLoading) return null
-
   return (
     <section className={styles.box}>
+      {isLoading && <Loading />}
       {item && <Slider title="Top artists">{item}</Slider>}
     </section>
   )

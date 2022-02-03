@@ -7,15 +7,15 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #161A1A;
+  background-color: #161a1a;
 
   &::-webkit-scrollbar-track {
-  border-radius: 1rem;
-  background-color: #F5F5F5;
+    border-radius: 1rem;
+    background-color: #f5f5f5;
   }
 
   &::-webkit-scrollbar {
-  width: 1.2rem;
+    width: 1.2rem;
   }
 
   &::-webkit-scrollbar-thumb {
@@ -32,7 +32,7 @@ a {
 html {
   font-size: 62.5%;
 
-  @media(max-width: 576px) {
+  @media (max-width: 576px) {
     font-size: 60%;
   }
 }
